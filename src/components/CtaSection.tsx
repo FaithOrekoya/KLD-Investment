@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, ShieldCheck, CheckCircle } from 'lucide-react';
+import jvEstateImage from '../assets/images/jv_development_estate_1794288072012.jpg';
 
 interface CtaSectionProps {
   onJoinClick: () => void;
@@ -11,7 +12,7 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onJoinClick }) => {
       {/* Background Full-Width Premium Property Photograph */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/src/assets/images/jv_development_estate_1794288072012.jpg"
+          src={jvEstateImage}
           alt="Luxury architectural real estate investment"
           className="w-full h-full object-cover object-center"
           referrerPolicy="no-referrer"

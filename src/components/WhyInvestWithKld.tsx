@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, KeyRound, Bell, Target, Handshake } from 'lucide-react';
+import architecturalPropertyImage from '../assets/images/about_architectural_property_1794288070785.jpg';
 
 interface WhyInvestWithKldProps {
   onJoinVipClick: () => void;
@@ -44,7 +45,7 @@ export const WhyInvestWithKld: React.FC<WhyInvestWithKldProps> = ({ onJoinVipCli
           <div className="lg:col-span-5 relative order-2 lg:order-1">
             <div className="relative rounded-2xl overflow-hidden border-2 border-[#F2B600]/40 shadow-2xl aspect-[4/5] bg-[#17334A]">
               <img
-                src="/src/assets/images/about_architectural_property_1794288070785.jpg"
+                src={architecturalPropertyImage}
                 alt="Contemporary architectural property representing KLD investment opportunities"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

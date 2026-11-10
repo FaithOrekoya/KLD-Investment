@@ -238,9 +238,12 @@ async function startServer() {
     });
     app.use(vite.middlewares);
   } else {
-    // Serve static files from dist
+    // Serve static files from dist in production
     const distPath = path.join(__dirname, 'dist');
     app.use(express.static(distPath));
+    app.use('/assets/images', express.static(path.join(__dirname, 'public/assets/images')));
+    app.use('/images', express.static(path.join(__dirname, 'public/images')));
+    app.use('/src/assets/images', express.static(path.join(__dirname, 'src/assets/images')));
     app.get('*', (_req, res) => {
       res.sendFile(path.join(distPath, 'index.html'));
     });
