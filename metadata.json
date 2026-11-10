@@ -1,0 +1,8 @@
+{
+  "name": "KLD Investments \u0026 Consulting",
+  "description": "Exclusive off-market discounted investment properties and joint venture opportunities for serious real estate investors.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

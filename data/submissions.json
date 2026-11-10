@@ -1,0 +1,34 @@
+[
+  {
+    "id": "KLD-VIP-948607",
+    "type": "vip",
+    "data": {
+      "firstName": "Sarah",
+      "lastName": "Jenkins",
+      "email": "s.jenkins@acmeholdings.com",
+      "phone": "(555) 329-8472",
+      "investorType": "Real Estate Company",
+      "budgetRange": "$1,000,000 - $2,500,000",
+      "preferredLocations": "Metro Tri-County Area",
+      "investmentType": "Rental",
+      "consent": true
+    },
+    "createdAt": "2026-11-10T05:44:46.547Z"
+  },
+  {
+    "id": "KLD-VIP-876962",
+    "type": "vip",
+    "data": {
+      "firstName": "Marcus",
+      "lastName": "Vance",
+      "email": "marcus.vance@example.com",
+      "phone": "555-019-2834",
+      "investorType": "Individual Investor",
+      "budgetRange": "$500,000 - $1,000,000",
+      "preferredLocations": "Southeast Corridor",
+      "investmentType": "Fix & Flip",
+      "consent": true
+    },
+    "createdAt": "2026-11-10T05:29:24.195Z"
+  }
+]
