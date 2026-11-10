@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ArrowRight, CheckCircle, ShieldCheck, Video, ZoomIn, ZoomOut, RotateCcw } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, CheckCircle, ShieldCheck } from 'lucide-react';
 import heroImage from '../assets/images/hero_luxury_estate_1794288070159.jpg';
 
 interface HeroProps {
@@ -8,26 +8,6 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onJoinVipClick, onExploreClick }) => {
-  const [zoomMode, setZoomMode] = useState<'in' | 'out' | 'cycle'>('in');
-  const [animKey, setAnimKey] = useState<number>(0);
-
-  const handleModeChange = (mode: 'in' | 'out' | 'cycle') => {
-    setZoomMode(mode);
-    setAnimKey((prev) => prev + 1);
-  };
-
-  const getAnimationClass = () => {
-    switch (zoomMode) {
-      case 'in':
-        return 'animate-hero-zoom-in';
-      case 'out':
-        return 'animate-hero-zoom-out';
-      case 'cycle':
-      default:
-        return 'animate-hero-cycle-5s';
-    }
-  };
-
   return (
     <section
       id="home"
@@ -36,66 +16,15 @@ export const Hero: React.FC<HeroProps> = ({ onJoinVipClick, onExploreClick }) =>
       {/* Background 5-Second Cinematic Architectural Zoom View */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
-          key={animKey}
           src={heroImage}
           alt="Cinematic architectural view of residential investment property"
-          className={`w-full h-full object-cover object-center ${getAnimationClass()}`}
+          className="w-full h-full object-cover object-center animate-hero-cycle-5s"
           referrerPolicy="no-referrer"
           style={{ transformOrigin: 'center center' }}
         />
         {/* Soft, Reduced Navy Overlay - Allows Property to Shine While Ensuring Sharp Text Legibility */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#073449]/85 via-[#073449]/55 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#073449]/60 via-transparent to-black/25" />
-      </div>
-
-      {/* 5-Second Video Camera View Controls */}
-      <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-20 flex items-center gap-1.5 bg-[#073449]/85 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 shadow-lg text-white">
-        <div className="flex items-center gap-1.5 pr-2 border-r border-white/20">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <Video className="w-3.5 h-3.5 text-[#F2B600]" />
-          <span className="text-[10px] font-['Montserrat'] font-bold uppercase tracking-wider text-stone-200 hidden sm:inline">
-            5s Video View
-          </span>
-        </div>
-
-        <button
-          onClick={() => handleModeChange('in')}
-          className={`px-2 py-1 rounded-full text-[10px] font-['Montserrat'] font-bold uppercase tracking-wider flex items-center gap-1 transition-colors cursor-pointer ${
-            zoomMode === 'in'
-              ? 'bg-[#F2B600] text-[#073449]'
-              : 'text-stone-300 hover:text-white hover:bg-white/10'
-          }`}
-          title="5-Second Zoom In View"
-        >
-          <ZoomIn className="w-3 h-3" />
-          <span>Zoom In</span>
-        </button>
-
-        <button
-          onClick={() => handleModeChange('out')}
-          className={`px-2 py-1 rounded-full text-[10px] font-['Montserrat'] font-bold uppercase tracking-wider flex items-center gap-1 transition-colors cursor-pointer ${
-            zoomMode === 'out'
-              ? 'bg-[#F2B600] text-[#073449]'
-              : 'text-stone-300 hover:text-white hover:bg-white/10'
-          }`}
-          title="5-Second Zoom Out View"
-        >
-          <ZoomOut className="w-3 h-3" />
-          <span>Zoom Out</span>
-        </button>
-
-        <button
-          onClick={() => handleModeChange('cycle')}
-          className={`px-2 py-1 rounded-full text-[10px] font-['Montserrat'] font-bold uppercase tracking-wider flex items-center gap-1 transition-colors cursor-pointer ${
-            zoomMode === 'cycle'
-              ? 'bg-[#F2B600] text-[#073449]'
-              : 'text-stone-300 hover:text-white hover:bg-white/10'
-          }`}
-          title="5-Second Continuous Motion Loop"
-        >
-          <RotateCcw className="w-3 h-3" />
-          <span className="hidden sm:inline">5s Loop</span>
-        </button>
       </div>
 
       {/* Content Container - Positioned on the Left */}
